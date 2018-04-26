@@ -1,5 +1,6 @@
 package philosopher.paradise.entity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -15,11 +16,14 @@ public class Topic {
 
     @Id
     @GeneratedValue
+    @ApiModelProperty(notes="The database generated product ID")
     private Long id;
 
+    @ApiModelProperty(notes="A topic of philosophic enquiry")
     private String text;
 
     @ManyToMany
+    @ApiModelProperty(notes="Quotes that correspond to the topic")
     private Set<Quote> quotes;
 
     private Topic(){
