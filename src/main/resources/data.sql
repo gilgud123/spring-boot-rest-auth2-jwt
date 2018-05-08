@@ -77,3 +77,4 @@ INSERT INTO quote_topic(QUOTE_ID, TOPIC_ID) VALUES (10011, 30002);
 INSERT INTO quote_topic(QUOTE_ID, TOPIC_ID) VALUES (10012, 30006);
 INSERT INTO quote_topic(QUOTE_ID, TOPIC_ID) VALUES (10013, 30005);
 INSERT INTO quote_topic(QUOTE_ID, TOPIC_ID) VALUES (10014, 30004);
+INSERT INTO users (user_id, username, password, enabled) VALUES ('1', 'katya', '$2a$10$jXpENQlTEQ5ecn90ugTyxOAotZOox7o3Kyign2NT//RZZCokPN5h2', true);
