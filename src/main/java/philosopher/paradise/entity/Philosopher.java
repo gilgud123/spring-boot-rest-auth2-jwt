@@ -1,19 +1,22 @@
 package philosopher.paradise.entity;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
+@Table(name="philosopher")
 public class Philosopher {
 
     @Id
     @GeneratedValue
-    @ApiModelProperty(notes="The database generated product ID")
+    @ApiModelProperty(notes="The database generated philosopher ID")
     private Long id;
 
     @ApiModelProperty(notes="The philosopher's name")
@@ -32,8 +35,9 @@ public class Philosopher {
     private String description;
 
     @OneToMany
+    @JoinColumn(name = "PHILOSOPHER_ID")
     @ApiModelProperty(notes="A set of all the philosopher's quotes in the database.")
-    private Set<Quote> quotes = new HashSet<>();
+    private Set<Quote> quotes;
 
     public Philosopher() {}
 

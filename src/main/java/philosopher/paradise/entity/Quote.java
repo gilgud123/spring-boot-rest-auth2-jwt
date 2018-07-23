@@ -1,12 +1,16 @@
 package philosopher.paradise.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Quote {
 
@@ -26,7 +30,8 @@ public class Quote {
     @ApiModelProperty(notes="A set of topics that correspond to the quote")
     private Set<Topic> topics;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "PHILOSOPHER_ID")
     @ApiModelProperty(notes="The author of the quote")
     private Philosopher philosopher;
