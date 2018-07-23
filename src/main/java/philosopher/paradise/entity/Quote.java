@@ -16,7 +16,7 @@ public class Quote {
 
     @Id
     @GeneratedValue
-    @ApiModelProperty(notes="The database generated product ID")
+    @ApiModelProperty(notes="The database generated quote ID")
     private Long id;
 
     @Lob
